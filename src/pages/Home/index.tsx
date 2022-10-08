@@ -71,7 +71,7 @@ export function Home() {
                   <td width="3rem">{index + 1}</td>
                   <td>
                     <div>
-                      <img src={music.coverUri} alt="Capa do álbum" />
+                      <img src={`http://localhost:3333/${music.coverUri}`} alt="Capa do álbum" />
                       <span>{music.name}</span>
                     </div>
                   </td>

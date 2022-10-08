@@ -90,7 +90,7 @@ export function Player() {
 
       {music ? (
         <PlayerCover filled={!!music}>
-          <img src={music.coverUri} alt="capa da musica" />
+          <img src={`http://localhost:3333/${music.coverUri}`} alt="capa da musica" />
           <br />
           <strong>{music.name}</strong>
         </PlayerCover>
