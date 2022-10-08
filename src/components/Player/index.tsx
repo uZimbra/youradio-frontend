@@ -3,9 +3,8 @@ import "rc-slider/assets/index.css";
 import Slider from "rc-slider";
 import React, { useEffect, useRef, useState } from "react";
 
-import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
-
 import { usePlayer } from "../../contexts/PlayerContext";
+import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import {
   MusicIcon,
   NextIcon,
@@ -85,7 +84,7 @@ export function Player() {
   return (
     <PlayerContainer>
       <PlayerHeader>
-        <MusicIcon src="/playing.png"/>
+        <MusicIcon src="/playing.png" />
         <strong>Tocando agora</strong>
       </PlayerHeader>
 
@@ -126,7 +125,7 @@ export function Player() {
         {music && (
           <audio
             ref={audioRef}
-            src={music.uri}
+            src={`http://localhost:3333/api/v1/musics/stream/${music.id}`}
             autoPlay
             onEnded={handleEpisodeEnded}
             onLoadedMetadata={setupProgressListener}

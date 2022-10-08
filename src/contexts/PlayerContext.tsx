@@ -6,7 +6,6 @@ type Music = {
   id: string;
   name: string;
   duration: number;
-  uri: string;
   coverUri: string;
 };
 

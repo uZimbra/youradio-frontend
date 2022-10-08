@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { usePlayer } from "../../contexts/PlayerContext";
+import { IMusic } from "../../models/IMusic";
 import { MusicService } from "../../services/MusicService";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import {
@@ -17,7 +18,6 @@ type Music = {
   durationAsString: string;
   duration: number;
   coverUri: string;
-  uri: string;
 };
 
 export function Home() {
@@ -33,14 +33,13 @@ export function Home() {
       try {
         const response = await MusicService.list();
 
-        const apiMusics = response.data.map((music) => {
+        const apiMusics = response.data.map((music: IMusic) => {
           return {
             id: music.id,
             name: music.name,
             durationAsString: convertDurationToTimeString(music.duration),
             duration: music.duration,
-            coverUri: music.cover_uri,
-            uri: music.uri,
+            coverUri: music.coverUri
           };
         });
 

@@ -2,7 +2,9 @@ export interface IMusic {
   id: string;
   name: string;
   duration: number;
-  uri: string;
-  cover_uri: string;
+  coverUri: string;
+  musicKey: string;
+  size: number;
+  type: string;
   created_at: string;
 }
